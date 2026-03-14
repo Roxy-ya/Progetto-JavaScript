@@ -6,17 +6,17 @@ L'interfaccia viene creata mediante manipolazione del DOM, e il valore salvato t
 
 # Comportamento
 Il contatore parte dal valore "0".
--'+' incrementa il valore
--'+' decrementa il valore
--'Reset' riporta il valore a "0"
+- '+' incrementa il valore
+- '+' decrementa il valore
+- 'Reset' riporta il valore a "0"
 
 
 # Funzionalità
--Incremento del contatore
--Decremento del contatore
--Reset del valore
--Salvataggio mediante **localStorage**
--Layout con Css
+- Incremento del contatore
+- Decremento del contatore
+- Reset del valore
+- Salvataggio mediante **localStorage**
+- Layout con Css
 
 
 # Struttura del progetto
@@ -34,5 +34,5 @@ PROGETTO-JAVASCRIPT
 
 
 # Esecuzione del progetto
--Clona il repository usando 'git clone https://github.com/Roxy-ya/Progetto-JavaScript.git'
--Apri il file 'index.html' nel browser
+1. Clona il repository usando 'git clone https://github.com/Roxy-ya/Progetto-JavaScript.git'
+2. Apri il file 'index.html' nel browser
