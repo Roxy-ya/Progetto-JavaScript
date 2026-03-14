@@ -36,3 +36,7 @@ PROGETTO-JAVASCRIPT
 # Esecuzione del progetto
 1. Clona il repository usando 'git clone https://github.com/Roxy-ya/Progetto-JavaScript.git'
 2. Apri il file 'index.html' nel browser
+
+
+## Live Demo Project
+https://counter-app-roxy.web.app
