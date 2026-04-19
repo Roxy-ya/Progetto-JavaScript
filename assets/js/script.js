@@ -1,6 +1,6 @@
 //Salvataggio del valore del contatore
 const savedCounterVal = localStorage.getItem("counterValue");
-let counterValue = savedCounterVal ? parseInt(savedCounterVal) : 0;
+let counterValue = savedCounterVal ? parseInt(savedCounterVal, 10) : 0;
 
 
 const app = document.getElementById("app");
@@ -15,49 +15,52 @@ title.textContent = "Counter App";
 
 const valueDisplay = document.createElement("div");
 valueDisplay.className = "counter-value";
-valueDisplay.textContent = counterValue;
 
 const buttonsWrapper = document.createElement("div");
 buttonsWrapper.className = "counter-buttons";
 
-const decrementButton = document.createElement("button");
-decrementButton.className = "counter-btn";
-decrementButton.textContent = "-";
+// Funzione per creare un pulsante (decremento, reset, incremento)
+function createButton(text) {
+    const button = document.createElement("button");
+    button.className = "counter-btn";
+    button.textContent = text;
+    return button;
+}
 
-const resetButton = document.createElement("button");
-resetButton.className = "counter-btn";
-resetButton.textContent = "Reset";
+const decrementButton = createButton("-");
+const resetButton = createButton("Reset");
+const incrementButton = createButton("+");
 
-const incrementButton = document.createElement("button");
-incrementButton.className = "counter-btn";
-incrementButton.textContent = "+";
-
-
-// Funzione per aggiornare il valore 
-function updateCounter() {
+// Funzioni per aggiornare il display del contatore e salvare il valore
+function renderCounter() {
     valueDisplay.textContent = counterValue;
+}
+
+function saveCounter() {
     localStorage.setItem("counterValue", counterValue);
 }
 
-// Evento click per decrementare -
+function syncCounter() {
+    renderCounter();
+    saveCounter();
+}
+
 decrementButton.addEventListener("click", function () {
     counterValue--;
-    updateCounter();
+    syncCounter();
 });
 
-// Evento click per incrementare +
 incrementButton.addEventListener("click", function () {
     counterValue++;
-    updateCounter();
+    syncCounter();
 });
 
-//Reset del contatore
 resetButton.addEventListener("click", function () {
     counterValue = 0;
-    updateCounter();
+    syncCounter();
 });
 
-// Struttura finale
+// Costruzione dell'interfaccia
 buttonsWrapper.appendChild(decrementButton);
 buttonsWrapper.appendChild(resetButton);
 buttonsWrapper.appendChild(incrementButton);
@@ -66,4 +69,8 @@ container.appendChild(title);
 container.appendChild(valueDisplay);
 container.appendChild(buttonsWrapper);
 
+// Aggiunta del container al DOM
 app.appendChild(container);
+
+//Inizializzazione del contatore
+renderCounter();

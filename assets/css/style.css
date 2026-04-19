@@ -5,7 +5,7 @@
 }
 
 body {
-    font-family: Arial, Helvetica, sans-serif ;
+    font-family: Arial, Helvetica, sans-serif;
     min-height: 100vh;
     display: flex;
     justify-content: center;
@@ -50,5 +50,36 @@ body {
 }
 
 .counter-btn:hover {
+    background-color: #003372;
+}
+
+/* Pagina 404 */
+.error-box {
+    background: #fff;
+    padding: 40px;
+    border-radius: 16px;
+    text-align: center;
+    box-shadow: 0 10px 25px rgba(184, 182, 182, 0.1);
+}
+
+.error-box h2 {
+    margin-bottom: 10px;
+}
+
+.error-box h1 {
+    margin-bottom: 20px;
+    font-size: 32px;
+}
+
+.error-box a {
+    display: inline-block;
+    padding: 12px 20px;
+    background: #0966d1;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 8px;
+}
+
+.error-box a:hover {
     background-color: #003372;
 }
